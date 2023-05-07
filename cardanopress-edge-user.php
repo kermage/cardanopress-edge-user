@@ -16,6 +16,8 @@
  * @since 0.1.0
  */
 
+use kermage\CardanoPress\EdgeUser\Main;
+
 // Accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -31,3 +33,6 @@ if ( ! defined( 'CP_EDGE_USER_FILE' ) ) {
 
 // Autoload classes with Composer
 require_once plugin_dir_path( CP_EDGE_USER_FILE ) . 'vendor/autoload.php';
+
+// Load the main plugin class
+add_action( 'plugins_loaded', array( new Main(), 'load' ) );
