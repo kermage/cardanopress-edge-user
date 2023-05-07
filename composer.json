@@ -1,0 +1,39 @@
+{
+	"name": "kermage/cardanopress-edge-user",
+	"description": "Allow to easily update to latest GitHub version release.",
+	"type": "wordpress-plugin",
+	"license": "GPL-3.0",
+	"authors": [
+		{
+			"name": "Gene Alyson Fortunado Torcende",
+			"email": "genealyson.torcende@gmail.com"
+		}
+	],
+	"keywords": [
+		"wordpress",
+		"cardanopress",
+		"plugin"
+	],
+	"config": {
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"sort-packages": true,
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"require": {
+		"php": "^7.4|^8.0"
+	},
+	"require-dev": {
+		"themeplate/tester": "^2.1"
+	},
+	"scripts": {
+		"analyse": "themeplate analyse",
+		"lint": "themeplate lint",
+		"fix": "themeplate fix",
+		"test": "themeplate test",
+		"test:unit": "themeplate test --type unit",
+		"test:integration": "themeplate test --type integration"
+	}
+}
