@@ -1,0 +1,15 @@
+{
+	"new_version"    : "0.1.0",
+	"homepage"       : "https://github.com/kermage/cardanopress-edge-user",
+	"download_link"  : "https://github.com/kermage/cardanopress-edge-user/archive/refs/tags/v0.1.0.zip",
+	"last_updated"   : "2023-05-15",
+	"author"         : "Gene Alyson Fortunado Torcende",
+	"author_profile" : "https://github.com/kermage",
+	"requires"       : "5.9",
+	"tested"         : "6.2",
+	"requires_php"   : "7.4",
+	"donate_link"    : "https://www.paypal.me/GAFT",
+	"sections"        : {
+		"description" : "<h1>CardanoPress Edge User</h1><p>Allow to easily update to latest GitHub version releases.</p>"
+	}
+}

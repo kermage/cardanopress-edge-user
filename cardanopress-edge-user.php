@@ -34,5 +34,8 @@ if ( ! defined( 'CP_EDGE_USER_FILE' ) ) {
 // Autoload classes with Composer
 require_once plugin_dir_path( CP_EDGE_USER_FILE ) . 'vendor/autoload.php';
 
+// Instantiate the updater
+EUM_Handler::run( CP_EDGE_USER_FILE, 'https://raw.githubusercontent.com/kermage/cardanopress-edge-user/main/update-data.json' );
+
 // Load the main plugin class
 add_action( 'plugins_loaded', array( new Main(), 'load' ) );
