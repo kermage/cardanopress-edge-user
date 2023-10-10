@@ -66,10 +66,12 @@ class Main {
 
 		$repo_name = str_replace( 'cardanopress-', 'plugin-', $this->get_slug( $transient ) );
 
+		$branch_name = apply_filters( 'cp_edge_user-' . $repo_name, 'main' );
+
 		$value->download_link = sprintf( self::DOWNLOAD_LINK_FORMAT, $repo_name, $value->new_version );
 
 		if ( isset( $value->upgrade_notice ) && 'Please do the update now to seamlessly use the official WordPress Plugin Directory version' === $value->upgrade_notice ) {
-			$value->upgrade_notice = 'Update now to use the latest GitHub version';
+			$value->upgrade_notice = 'Update now to use the latest GitHub version' . ( 'main' === $branch_name ? '' : ' (' . $branch_name . ')' );
 		}
 
 		return $value;
