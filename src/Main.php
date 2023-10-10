@@ -63,7 +63,9 @@ class Main {
 			return $value;
 		}
 
-		$value->download_link = sprintf( self::DOWNLOAD_LINK_FORMAT, $this->get_slug( $transient ), $value->new_version );
+		$repo_name = str_replace( 'cardanopress-', 'plugin-', $this->get_slug( $transient ) );
+
+		$value->download_link = sprintf( self::DOWNLOAD_LINK_FORMAT, $repo_name, $value->new_version );
 
 		if ( isset( $value->upgrade_notice ) && 'Please do the update now to seamlessly use the official WordPress Plugin Directory version' === $value->upgrade_notice ) {
 			$value->upgrade_notice = 'Update now to use the latest GitHub version';
