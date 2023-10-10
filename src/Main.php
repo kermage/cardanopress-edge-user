@@ -11,7 +11,7 @@ use EUM_Handler;
 
 class Main {
 
-	public const UPDATE_DATA_FORMAT   = 'https://raw.githubusercontent.com/CardanoPress/%s/main/update-data.json';
+	public const UPDATE_DATA_FORMAT   = 'https://raw.githubusercontent.com/CardanoPress/%s/%s/update-data.json';
 	public const DOWNLOAD_LINK_FORMAT = 'https://github.com/CardanoPress/%s/archive/refs/tags/v%s.zip';
 
 
@@ -38,8 +38,9 @@ class Main {
 
 			$plugin_path = trailingslashit( WP_PLUGIN_DIR ) . $plugin;
 			$repo_name   = str_replace( 'cardanopress-', 'plugin-', dirname( $plugin ) );
+			$branch_name = apply_filters( 'cp_edge_user-' . $repo_name, 'main' );
 
-			EUM_Handler::run( wp_normalize_path( $plugin_path ), sprintf( self::UPDATE_DATA_FORMAT, $repo_name ) );
+			EUM_Handler::run( wp_normalize_path( $plugin_path ), sprintf( self::UPDATE_DATA_FORMAT, $repo_name, $branch_name ) );
 			add_filter(
 				'pre_set_site_transient_' . $this->get_key( $plugin ),
 				array( $this, 'filter_transient' ),
