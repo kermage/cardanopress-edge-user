@@ -32,7 +32,7 @@ class Main {
 	public function load(): void {
 
 		foreach ( get_option( 'active_plugins' ) as $plugin ) {
-			if ( 0 !== strpos( $plugin, 'cardanopress' ) ) {
+			if ( 0 !== strpos( $plugin, 'cardanopress' ) || plugin_basename( CP_EDGE_USER_FILE ) === $plugin ) {
 				continue;
 			}
 
