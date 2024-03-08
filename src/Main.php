@@ -11,6 +11,8 @@ use EUM_Handler;
 
 class Main {
 
+	protected object $core_update;
+
 	public const UPDATE_DATA_FORMAT   = 'https://raw.githubusercontent.com/CardanoPress/%s/%s/update-data.json';
 	public const DOWNLOAD_LINK_FORMAT = 'https://github.com/CardanoPress/%s/archive/refs/tags/v%s.zip';
 
@@ -31,8 +33,10 @@ class Main {
 
 	public function load(): void {
 
+		$this->core_update = get_site_transient( 'update_plugins' );
+
 		foreach ( get_option( 'active_plugins' ) as $plugin ) {
-			if ( 0 !== strpos( $plugin, 'cardanopress' ) || plugin_basename( CP_EDGE_USER_FILE ) === $plugin ) {
+			if ( 0 !== strpos( $plugin, 'cardanopress' ) || plugin_basename( CP_EDGE_USER_FILE ) === $plugin || isset( $this->core_update->response[ $plugin ] ) ) {
 				continue;
 			}
 
