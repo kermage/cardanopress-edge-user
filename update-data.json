@@ -1,12 +1,12 @@
 {
-	"new_version"    : "0.2.0",
+	"new_version"    : "0.3.0",
 	"homepage"       : "https://github.com/kermage/cardanopress-edge-user",
-	"download_link"  : "https://github.com/kermage/cardanopress-edge-user/archive/refs/tags/v0.2.0.zip",
-	"last_updated"   : "2023-10-10",
+	"download_link"  : "https://github.com/kermage/cardanopress-edge-user/archive/refs/tags/v0.3.0.zip",
+	"last_updated"   : "2024-03-09",
 	"author"         : "Gene Alyson Fortunado Torcende",
 	"author_profile" : "https://github.com/kermage",
 	"requires"       : "5.9",
-	"tested"         : "6.2",
+	"tested"         : "6.4.99",
 	"requires_php"   : "7.4",
 	"donate_link"    : "https://www.paypal.me/GAFT",
 	"sections"        : {
