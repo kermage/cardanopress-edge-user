@@ -24,6 +24,7 @@
 	},
 	"require": {
 		"php": "^7.4|^8.0",
+		"ext-json": "*",
 		"kermage/external-update-manager": "^2.2"
 	},
 	"require-dev": {

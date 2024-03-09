@@ -43,8 +43,15 @@ class Main {
 			$plugin_path = trailingslashit( WP_PLUGIN_DIR ) . $plugin;
 			$repo_name   = str_replace( 'cardanopress-', 'plugin-', dirname( $plugin ) );
 			$branch_name = apply_filters( 'cp_edge_user-' . $repo_name, 'main' );
+			$plugin_data = get_plugin_data( $plugin_path, false, false );
+			$update_url  = sprintf( self::UPDATE_DATA_FORMAT, $repo_name, $branch_name );
+			$remote_data = ( new Checker( $plugin ) )->check( $update_url );
 
-			EUM_Handler::run( wp_normalize_path( $plugin_path ), sprintf( self::UPDATE_DATA_FORMAT, $repo_name, $branch_name ) );
+			if ( $plugin_data['Version'] === $remote_data->new_version ) {
+				continue;
+			}
+
+			EUM_Handler::run( wp_normalize_path( $plugin_path ), $update_url );
 			add_filter(
 				'pre_set_site_transient_' . $this->get_key( $plugin ),
 				array( $this, 'filter_transient' ),
