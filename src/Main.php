@@ -33,10 +33,10 @@ class Main {
 
 	public function load(): void {
 
-		$this->core_update = get_site_transient( 'update_plugins' );
+		$this->core_update = get_site_transient( 'update_plugins' ) ?? (object) array();
 
 		foreach ( get_option( 'active_plugins' ) as $plugin ) {
-			if ( 0 !== strpos( $plugin, 'cardanopress' ) || plugin_basename( CP_EDGE_USER_FILE ) === $plugin || isset( $this->core_update->response[ $plugin ] ) ) {
+			if ( 0 !== strpos( $plugin, 'cardanopress' ) || plugin_basename( CP_EDGE_USER_FILE ) === $plugin ) {
 				continue;
 			}
 
@@ -47,7 +47,7 @@ class Main {
 			$update_url  = sprintf( self::UPDATE_DATA_FORMAT, $repo_name, $branch_name );
 			$remote_data = ( new Checker( $plugin ) )->check( $update_url );
 
-			if ( $plugin_data['Version'] === $remote_data->new_version ) {
+			if ( $plugin_data['Version'] === $remote_data->new_version || ( isset( $this->core_update->response[ $plugin ] ) && $this->core_update->response[ $plugin ] === $remote_data->new_version ) ) {
 				continue;
 			}
 
