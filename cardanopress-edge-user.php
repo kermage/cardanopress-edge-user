@@ -6,7 +6,7 @@
  * Author:      Gene Alyson Fortunado Torcende
  * Author URI:  https://genealysontorcende.wordpress.com/
  * Description: Allow to easily update to latest GitHub version releases.
- * Version:     0.4.0
+ * Version:     0.5.0
  * License:     GNU General Public License v3.0
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  *
