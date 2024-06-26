@@ -47,7 +47,7 @@ class Main {
 			$update_url  = sprintf( self::UPDATE_DATA_FORMAT, $repo_name, $branch_name );
 			$remote_data = ( new Checker( $plugin ) )->check( $update_url );
 
-			if ( $plugin_data['Version'] === $remote_data->new_version || ( isset( $this->core_update->response[ $plugin ] ) && $this->core_update->response[ $plugin ] === $remote_data->new_version ) ) {
+			if ( ! $remote_data || $plugin_data['Version'] === $remote_data->new_version || ( isset( $this->core_update->response[ $plugin ] ) && $this->core_update->response[ $plugin ] === $remote_data->new_version ) ) {
 				continue;
 			}
 
