@@ -19,7 +19,7 @@ class Main {
 
 	protected function get_key( string $plugin ): string {
 
-		return 'eum_plugin_' . dirname( $plugin );
+		return 'eum_plugin_' . $plugin;
 
 	}
 
@@ -40,12 +40,13 @@ class Main {
 				continue;
 			}
 
+			$plugin_slug = dirname( $plugin );
 			$plugin_path = trailingslashit( WP_PLUGIN_DIR ) . $plugin;
-			$repo_name   = str_replace( 'cardanopress-', 'plugin-', dirname( $plugin ) );
+			$repo_name   = str_replace( 'cardanopress-', 'plugin-', $plugin_slug );
 			$branch_name = apply_filters( 'cp_edge_user-' . $repo_name, 'main' );
 			$plugin_data = get_plugin_data( $plugin_path, false, false );
 			$update_url  = sprintf( self::UPDATE_DATA_FORMAT, $repo_name, $branch_name );
-			$remote_data = ( new Checker( $plugin ) )->check( $update_url );
+			$remote_data = ( new Checker( $plugin_slug ) )->check( $update_url );
 
 			if ( ! $remote_data || $plugin_data['Version'] === $remote_data->new_version || ( isset( $this->core_update->response[ $plugin ] ) && $this->core_update->response[ $plugin ] === $remote_data->new_version ) ) {
 				continue;
@@ -53,7 +54,7 @@ class Main {
 
 			EUM_Handler::run( wp_normalize_path( $plugin_path ), $update_url );
 			add_filter(
-				'pre_set_site_transient_' . $this->get_key( $plugin ),
+				'pre_set_site_transient_' . $this->get_key( $plugin_slug ),
 				array( $this, 'filter_transient' ),
 				10,
 				2
