@@ -11,6 +11,8 @@ class Checker {
 
 	protected string $plugin;
 
+	public const DATA_PREFIX = 'cpeu_';
+
 
 	public function __construct( string $plugin ) {
 
@@ -21,7 +23,7 @@ class Checker {
 
 	public function check( string $url ): ?object {
 
-		$key  = 'cpeu_' . $this->plugin;
+		$key  = self::DATA_PREFIX . $this->plugin;
 		$data = get_site_transient( $key );
 
 		if ( ! is_object( $data ) ) {

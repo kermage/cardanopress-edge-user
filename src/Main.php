@@ -48,6 +48,8 @@ class Main {
 			$update_url  = sprintf( self::UPDATE_DATA_FORMAT, $repo_name, $branch_name );
 			$remote_data = ( new Checker( $plugin_slug ) )->check( $update_url );
 
+			add_action( 'delete_site_transient_eum_plugin_' . $plugin_slug, array( $this, 'reset_cached_data' ) );
+
 			if ( ! $remote_data || $plugin_data['Version'] === $remote_data->new_version || ( isset( $this->core_update->response[ $plugin ] ) && $this->core_update->response[ $plugin ] === $remote_data->new_version ) ) {
 				continue;
 			}
@@ -61,6 +63,11 @@ class Main {
 			);
 		}
 
+	}
+
+
+	public function reset_cached_data( string $transient ): void {
+		delete_site_transient( Checker::DATA_PREFIX . $this->get_slug( $transient ) );
 	}
 
 
