@@ -43,7 +43,7 @@ class Checker {
 		);
 		$response = wp_remote_request( $url, $options );
 
-		if ( ! is_array( $response ) || is_wp_error( $response ) ) {
+		if ( is_wp_error( $response ) ) {
 			return null;
 		}
 
