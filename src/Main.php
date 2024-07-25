@@ -50,7 +50,7 @@ class Main {
 
 			add_action( 'delete_site_transient_eum_plugin_' . $plugin_slug, array( $this, 'reset_cached_data' ) );
 
-			if ( ! $remote_data || $plugin_data['Version'] === $remote_data->new_version || ( isset( $this->core_update->response[ $plugin ] ) && $this->core_update->response[ $plugin ] === $remote_data->new_version ) ) {
+			if ( ! $remote_data || $plugin_data['Version'] === $remote_data->new_version || ( isset( $this->core_update->response[ $plugin ]->new_version ) && $this->core_update->response[ $plugin ]->new_version === $remote_data->new_version ) ) {
 				continue;
 			}
 
