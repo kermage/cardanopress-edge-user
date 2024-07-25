@@ -33,7 +33,13 @@ class Main {
 
 	public function load(): void {
 
-		$this->core_update = get_site_transient( 'update_plugins' ) ?? (object) array();
+		$transient = get_site_transient( 'update_plugins' );
+
+		if ( ! is_object( $transient ) ) {
+			$transient = (object) array();
+		}
+
+		$this->core_update = $transient;
 
 		foreach ( get_option( 'active_plugins' ) as $plugin ) {
 			if ( 0 !== strpos( $plugin, 'cardanopress' ) || plugin_basename( CP_EDGE_USER_FILE ) === $plugin ) {
@@ -47,10 +53,11 @@ class Main {
 			$plugin_data = get_plugin_data( $plugin_path, false, false );
 			$update_url  = sprintf( self::UPDATE_DATA_FORMAT, $repo_name, $branch_name );
 			$remote_data = ( new Checker( $plugin_slug ) )->check( $update_url );
+			$core_data   = $this->core_update->response[ $plugin ] ?? (object) array();
 
 			add_action( 'delete_site_transient_eum_plugin_' . $plugin_slug, array( $this, 'reset_cached_data' ) );
 
-			if ( ! $remote_data || $plugin_data['Version'] === $remote_data->new_version || ( isset( $this->core_update->response[ $plugin ]->new_version ) && $this->core_update->response[ $plugin ]->new_version === $remote_data->new_version ) ) {
+			if ( ! $remote_data || ( $plugin_data['Version'] === $remote_data->new_version ) || ( isset( $core_data->new_version ) && $core_data->new_version === $remote_data->new_version ) ) {
 				continue;
 			}
 
