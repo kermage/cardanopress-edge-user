@@ -26,6 +26,7 @@ class ComposerStaticInit35b0040732ee4fc2c278f55e45c9fad7
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'kermage\\CardanoPress\\EdgeUser\\Checker' => __DIR__ . '/../..' . '/src/Checker.php',
         'kermage\\CardanoPress\\EdgeUser\\Main' => __DIR__ . '/../..' . '/src/Main.php',
     );
 

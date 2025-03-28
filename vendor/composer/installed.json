@@ -2,17 +2,17 @@
     "packages": [
         {
             "name": "kermage/external-update-manager",
-            "version": "v2.2.0",
-            "version_normalized": "2.2.0.0",
+            "version": "v2.6.1",
+            "version_normalized": "2.6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kermage/External-Update-Manager.git",
-                "reference": "00506d4e76047026d0c19f39223a8f2051593686"
+                "reference": "21e05094e7c53efda35f5ced6362fb6d2d68486f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kermage/External-Update-Manager/zipball/00506d4e76047026d0c19f39223a8f2051593686",
-                "reference": "00506d4e76047026d0c19f39223a8f2051593686",
+                "url": "https://api.github.com/repos/kermage/External-Update-Manager/zipball/21e05094e7c53efda35f5ced6362fb6d2d68486f",
+                "reference": "21e05094e7c53efda35f5ced6362fb6d2d68486f",
                 "shasum": ""
             },
             "require": {
@@ -20,12 +20,9 @@
                 "php": ">=5.6.0"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
-                "phpcompatibility/phpcompatibility-wp": "^2.1",
-                "squizlabs/php_codesniffer": "^3.5",
-                "wp-coding-standards/wpcs": "^2.2"
+                "themeplate/tester": "^2.2"
             },
-            "time": "2022-04-25T11:28:19+00:00",
+            "time": "2025-03-24T15:38:33+00:00",
             "type": "wordpress-dropin",
             "installation-source": "dist",
             "autoload": {
@@ -50,7 +47,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kermage/External-Update-Manager/issues",
-                "source": "https://github.com/kermage/External-Update-Manager/tree/v2.2.0"
+                "source": "https://github.com/kermage/External-Update-Manager/tree/v2.6.1"
             },
             "install-path": "../kermage/external-update-manager"
         }
