@@ -41,7 +41,7 @@ class Main {
 
 		$this->core_update = $transient;
 
-		foreach ( get_option( 'active_plugins' ) as $plugin ) {
+		foreach ( (array) get_option( 'active_plugins' ) as $plugin ) {
 			if ( 0 !== strpos( $plugin, 'cardanopress' ) || plugin_basename( CP_EDGE_USER_FILE ) === $plugin ) {
 				continue;
 			}
@@ -49,7 +49,7 @@ class Main {
 			$plugin_slug = dirname( $plugin );
 			$plugin_path = trailingslashit( WP_PLUGIN_DIR ) . $plugin;
 			$repo_name   = str_replace( 'cardanopress-', 'plugin-', $plugin_slug );
-			$branch_name = apply_filters( 'cp_edge_user-' . $repo_name, 'main' );
+			$branch_name = (string) apply_filters( 'cp_edge_user-' . $repo_name, 'main' );
 			$plugin_data = get_plugin_data( $plugin_path, false, false );
 			$update_url  = sprintf( self::UPDATE_DATA_FORMAT, $repo_name, $branch_name );
 			$remote_data = ( new Checker( $plugin_slug ) )->check( $update_url );
@@ -92,7 +92,7 @@ class Main {
 
 		$repo_name = str_replace( 'cardanopress-', 'plugin-', $this->get_slug( $transient ) );
 
-		$branch_name = apply_filters( 'cp_edge_user-' . $repo_name, 'main' );
+		$branch_name = (string) apply_filters( 'cp_edge_user-' . $repo_name, 'main' );
 
 		$value->download_link = sprintf( self::DOWNLOAD_LINK_FORMAT, $repo_name, $value->new_version );
 

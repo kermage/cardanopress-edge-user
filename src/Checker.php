@@ -53,7 +53,7 @@ class Checker {
 		$body = wp_remote_retrieve_body( $response );
 
 		if ( 200 === $code ) {
-			return json_decode( $body );
+			return (object) json_decode( $body );
 		}
 
 		return null;
