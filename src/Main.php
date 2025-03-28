@@ -9,6 +9,7 @@ namespace kermage\CardanoPress\EdgeUser;
 
 use EUM_Handler;
 
+/** @phpstan-type RemoteData object{new_version: string} */
 class Main {
 
 	protected object $core_update;
@@ -57,6 +58,10 @@ class Main {
 
 			add_action( 'delete_site_transient_eum_plugin_' . $plugin_slug, array( $this, 'reset_cached_data' ) );
 
+			/**
+			 * @var RemoteData|null $remote_data
+			 * @var RemoteData|null $core_data
+			 */
 			if ( ! $remote_data || ( $plugin_data['Version'] === $remote_data->new_version ) || ( isset( $core_data->new_version ) && $core_data->new_version === $remote_data->new_version ) ) {
 				continue;
 			}
