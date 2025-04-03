@@ -2,7 +2,7 @@
 	"name": "kermage/cardanopress-edge-user",
 	"description": "Allow to easily update to latest GitHub version release.",
 	"type": "wordpress-plugin",
-	"license": "GPL-3.0",
+	"license": "GPL-3.0-only",
 	"authors": [
 		{
 			"name": "Gene Alyson Fortunado Torcende",
@@ -38,8 +38,6 @@
 		"analyse": "themeplate analyse",
 		"lint": "themeplate lint",
 		"fix": "themeplate fix",
-		"test": "themeplate test",
-		"test:unit": "themeplate test --type unit",
-		"test:integration": "themeplate test --type integration"
+		"test": "themeplate test"
 	}
 }
