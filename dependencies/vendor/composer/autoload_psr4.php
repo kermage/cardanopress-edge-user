@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'kermage\\CardanoPress\\EdgeUser\\' => array($baseDir . '/src'),
+    'kermage\\CardanoPress\\EdgeUser\\' => array($baseDir . '/../src'),
 );

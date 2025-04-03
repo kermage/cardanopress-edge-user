@@ -1,0 +1,57 @@
+{
+    "packages": [
+        {
+            "name": "kermage/external-update-manager",
+            "version": "v2.6.1",
+            "version_normalized": "2.6.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kermage/External-Update-Manager.git",
+                "reference": "21e05094e7c53efda35f5ced6362fb6d2d68486f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kermage/External-Update-Manager/zipball/21e05094e7c53efda35f5ced6362fb6d2d68486f",
+                "reference": "21e05094e7c53efda35f5ced6362fb6d2d68486f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "themeplate/tester": "^2.2"
+            },
+            "time": "2025-03-24T15:38:33+00:00",
+            "type": "wordpress-dropin",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "class-external-update-manager.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Gene Alyson Fortunado Torcende",
+                    "email": "genealyson.torcende@gmail.com"
+                }
+            ],
+            "description": "A drop-in library for WordPress themes or plugins to manage updates.",
+            "keywords": [
+                "dropin",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/kermage/External-Update-Manager/issues",
+                "source": "https://github.com/kermage/External-Update-Manager/tree/v2.6.1"
+            },
+            "install-path": "../kermage/external-update-manager"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

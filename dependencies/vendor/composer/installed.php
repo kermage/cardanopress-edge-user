@@ -1,20 +1,20 @@
 <?php return array(
     'root' => array(
-        'name' => 'kermage/cardanopress-edge-user',
+        'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '6cbf556dcf9bb77aac0efdea2c5a3eb6a6125f8a',
-        'type' => 'wordpress-plugin',
+        'reference' => 'c1fbe545d4b12f9ef692b4d8f24127454606db01',
+        'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'dev' => false,
+        'dev' => true,
     ),
     'versions' => array(
-        'kermage/cardanopress-edge-user' => array(
+        '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '6cbf556dcf9bb77aac0efdea2c5a3eb6a6125f8a',
-            'type' => 'wordpress-plugin',
+            'reference' => 'c1fbe545d4b12f9ef692b4d8f24127454606db01',
+            'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,

@@ -1,0 +1,17 @@
+{
+	"config": {
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"sort-packages": true
+	},
+	"require": {
+		"php": "^7.4|^8.2",
+		"ext-json": "*",
+		"kermage/external-update-manager": "^2.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"kermage\\CardanoPress\\EdgeUser\\": "../src"
+		}
+	}
+}

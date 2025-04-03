@@ -25,16 +25,10 @@
 	},
 	"require": {
 		"php": "^7.4|^8.2",
-		"ext-json": "*",
-		"kermage/external-update-manager": "^2.2"
+		"ext-json": "*"
 	},
 	"require-dev": {
 		"themeplate/tester": "^2.1"
-	},
-	"autoload": {
-		"psr-4": {
-			"kermage\\CardanoPress\\EdgeUser\\": "src/"
-		}
 	},
 	"scripts": {
 		"analyse": "themeplate analyse",

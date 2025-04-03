@@ -7,6 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
-    'kermage\\CardanoPress\\EdgeUser\\Checker' => $baseDir . '/src/Checker.php',
-    'kermage\\CardanoPress\\EdgeUser\\Main' => $baseDir . '/src/Main.php',
+    'kermage\\CardanoPress\\EdgeUser\\Checker' => $baseDir . '/../src/Checker.php',
+    'kermage\\CardanoPress\\EdgeUser\\Main' => $baseDir . '/../src/Main.php',
 );
