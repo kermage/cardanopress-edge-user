@@ -31,6 +31,7 @@
 		"themeplate/tester": "^2.1"
 	},
 	"scripts": {
+		"index.php": "themeplate index.php",
 		"analyse": "themeplate analyse",
 		"lint": "themeplate lint",
 		"fix": "themeplate fix",

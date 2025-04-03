@@ -13,5 +13,12 @@
 		"psr-4": {
 			"kermage\\CardanoPress\\EdgeUser\\": "../src"
 		}
+	},
+	"scripts": {
+	  "action-prefix": [
+		"composer -d .. run index.php"
+	  ],
+	  "post-install-cmd": "@action-prefix",
+	  "post-update-cmd": "@action-prefix"
 	}
 }
